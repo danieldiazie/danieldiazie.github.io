@@ -294,7 +294,6 @@
       flex-direction: column;
       gap: 8px;
       box-shadow: var(--shadow-soft);
-      height: 100%; /* NEW */
     }
 
     .demo-tag {
@@ -327,7 +326,7 @@
     }
 
     .demo-actions {
-      margin-top: auto; /* NEW: forces button to bottom */
+      margin-top: 4px;
     }
 
     .demo-btn {
@@ -622,16 +621,15 @@
               Tracks open, paid, and overdue invoices in one place. Filter by client or status,
               see “paid this month,” and mark invoices as paid directly from the dashboard.
             </p>
-            <p>
+            <div class="demo-actions">
               <a
+                class="demo-btn"
                 href="https://script.google.com/macros/s/AKfycbyzP-AjZOcMpEl8DWKoOzAxDK0TzIokEt2Jf-1ghkzXzyCfQVYn6nfUKnRRIS-1dQ_yqw/exec"
                 target="_blank"
                 rel="noopener noreferrer"
-                style="display:inline-block;margin-top:6px;padding:6px 12px;border-radius:999px;border:1px solid #2563eb;font-size:12px;font-weight:500;color:#2563eb;background:rgba(37,99,235,0.06);text-decoration:none;"
               >
-              View live demo ▶
-            </a>
-            </p>
+                View live demo ▶
+              </a>
             </div>
           </article>
 
@@ -824,5 +822,3 @@
   </script>
 </body>
 </html>
-
-

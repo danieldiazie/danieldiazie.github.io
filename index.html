@@ -147,6 +147,7 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
+      margin-bottom: 6px;
     }
 
     .btn-primary {
@@ -179,6 +180,10 @@
       align-items: center;
       gap: 6px;
       color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .hero-note {
@@ -294,7 +299,7 @@
       flex-direction: column;
       gap: 8px;
       box-shadow: var(--shadow-soft);
-      height: 100%;            /* ⬅ added */
+      height: 100%;
     }
 
     .demo-tag {
@@ -327,7 +332,7 @@
     }
 
     .demo-actions {
-      margin-top: auto;         /* ⬅ changed from 4px to auto */
+      margin-top: auto;
     }
 
     .demo-btn {
@@ -462,6 +467,12 @@
       text-decoration: underline;
     }
 
+    .contact-inline-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
     footer {
       margin-top: 24px;
       font-size: 11px;
@@ -540,10 +551,22 @@
           </ul>
 
           <div class="hero-cta-row">
+            <!-- Primary: email call -->
             <a href="mailto:danieldiazie@gmail.com?subject=Dashboard%20Project%20Inquiry" class="btn-primary">
               Request a quick call
             </a>
-            <button class="btn-ghost" onclick="window.location='#work'">
+            <!-- Secondary: Tally popup -->
+            <button
+              class="btn-ghost"
+              type="button"
+              data-tally-open="yPPQjW"
+              data-tally-layout="modal"
+              data-tally-width="480"
+              data-tally-hide-title="1"
+            >
+              Or fill a short intake form
+            </button>
+            <button class="btn-ghost" type="button" onclick="window.location='#work'">
               See examples
             </button>
           </div>
@@ -805,6 +828,20 @@
               <strong>Email:</strong> danieldiazie@gmail.com
             </a>
           </div>
+          <p class="contact-inline-note">
+            Prefer a form instead?
+            <button
+              type="button"
+              class="btn-ghost"
+              style="margin-top: 6px; padding: 6px 10px; border-color: rgba(148, 163, 184, 0.7); font-size: 11px;"
+              data-tally-open="yPPQjW"
+              data-tally-layout="modal"
+              data-tally-width="480"
+              data-tally-hide-title="1"
+            >
+              Fill out the project intake form
+            </button>
+          </p>
           <p style="font-size: 11px; opacity: 0.9;">
             In your message, feel free to include a short description of your current setup
             (what you’re tracking, what tools you use now, and what you wish you could see
@@ -822,6 +859,24 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Tally embed loader -->
+  <script>
+    (function(){
+      var d=document, w=window;
+      if(w.Tally) return;
+      w.Tally = w.Tally || function(){ (w.Tally.q = w.Tally.q || []).push(arguments); };
+      function l(){
+        if(d.getElementById("tally-js")) return;
+        var s=d.createElement("script");
+        s.id="tally-js";
+        s.src="https://tally.so/widgets/embed.js";
+        s.async=true;
+        d.body.appendChild(s);
+      }
+      if(d.readyState === "complete") l();
+      else w.addEventListener("load", l);
+    })();
+  </script>
 </body>
 </html>
-

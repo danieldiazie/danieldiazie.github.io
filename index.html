@@ -43,10 +43,28 @@
       text-decoration: underline;
     }
 
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
     .page {
       max-width: 1080px;
       margin: 0 auto;
       padding: 24px 16px 40px;
+      position: relative;
     }
 
     header {
@@ -477,6 +495,21 @@
       margin-top: 4px;
     }
 
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     footer {
       margin-top: 24px;
       font-size: 11px;
@@ -523,6 +556,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="page">
     <header>
       <div class="brand">
@@ -535,13 +569,13 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- HERO -->
       <section class="hero">
         <div class="hero-card">
-          <div class="hero-title">
+          <h1 class="hero-title">
             Turn messy spreadsheets into a clear, simple control panel.
-          </div>
+          </h1>
           <div class="hero-text">
             I take the spreadsheets and reports you already use and turn them into an easy-to-read dashboard for your business. 
             You keep working in the tools you know, but instead of digging through tabs and formulas, you get a clean view of what’s going on.

@@ -517,6 +517,26 @@
       text-align: center;
     }
 
+    footer p {
+      margin: 4px 0;
+    }
+
+    .accessibility-statement {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .accessibility-statement a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .accessibility-statement a:hover {
+      text-decoration: none;
+    }
+
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -926,7 +946,10 @@
     </main>
 
     <footer>
-      &copy; <span id="year"></span> Diazovate. All rights reserved.
+      <p>&copy; <span id="year"></span> Diazovate. All rights reserved.</p>
+      <p class="accessibility-statement">
+        Accessibility: We aim to make our website accessible to everyone. If you experience any issues, please email us at <a href="mailto:dan@diazovate.com?subject=Accessibility%20Issue">dan@diazovate.com</a>.
+      </p>
     </footer>
   </div>
 

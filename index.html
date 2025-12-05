@@ -18,6 +18,9 @@
       --text-muted: #6b7280;
       --border: #e5e7eb;
       --radius-lg: 14px;
+      --radius-sm: 10px;
+      --muted-contrast: #a3a3a3;
+      --hover-bg: rgba(37, 99, 235, 0.06);
       --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
@@ -202,7 +205,8 @@
     }
 
     .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--hover-bg);
+      text-decoration: none;
     }
 
     .contact-card .btn-ghost {
@@ -233,7 +237,7 @@
       text-transform: uppercase;
       letter-spacing: 0.09em;
       font-size: 10px;
-      color: #9ca3af;
+      color: var(--muted-contrast);
       margin-bottom: 2px;
     }
 
@@ -250,6 +254,10 @@
 
     .section {
       margin-bottom: 32px;
+    }
+
+    .section:not(:first-of-type) {
+      margin-top: 36px;
     }
 
     .section-header {
@@ -374,7 +382,7 @@
     }
 
     .demo-btn:hover {
-      background: rgba(37, 99, 235, 0.12);
+      background: var(--hover-bg);
       text-decoration: none;
     }
 
@@ -578,6 +586,19 @@
         grid-template-columns: minmax(0, 1fr);
       }
     }
+
+    @media (max-width: 640px) {
+      .section:not(:first-of-type) {
+        margin-top: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
   </style>
 
   <!-- Privacy-friendly analytics by Plausible -->
@@ -678,16 +699,15 @@
         <div class="what-i-do">
           <div class="what-text">
             <p>
-              Most businesses are run from spreadsheets that started simple and gradually
-              became fragile, slow, and hard to understand. I help clean that up and turn it into
-              something you can actually run the business from.
+              I clean up fragile spreadsheets and ship dashboards your team can actually run the business from.
             </p>
+            <p>The result is a simple, decision‑ready view you can run the business from.</p>
             <p>I typically build:</p>
             <ul>
-              <li>Invoice & payment dashboards (who owes you what, and what’s overdue)</li>
-              <li>Operations performance views with weekly snapshots and rankings</li>
-              <li>Inventory / logistics dashboards with service windows and risk indicators</li>
-              <li>Simple internal tools and dashboards that plug into your existing spreadsheets</li>
+              <li>Invoice & payment dashboards — see who owes what and what's overdue at a glance</li>
+              <li>Operations performance views — weekly snapshots and rankings for faster reviews</li>
+              <li>Inventory / logistics dashboards — delivery windows and risk flags surfaced early</li>
+              <li>Simple internal tools — plug into your existing spreadsheets with minimal disruption</li>
             </ul>
           </div>
 
@@ -721,13 +741,15 @@
                 rel="noopener noreferrer"
                 style="display: block; cursor: pointer;"
               >
-                <img src="invoice-dashboard.png" alt="Invoice and payment tracker dashboard demo" />
+                <img src="invoice-dashboard.png" alt="Invoice and payment tracker dashboard demo" width="600" height="360" />
               </a>
             </div>
             <p class="demo-text">
               Shows open, paid, and overdue invoices in one place. You can filter by client or status,
               see what was paid this month, and mark invoices as paid directly from the dashboard instead of scrolling through rows.
             </p>
+            <p class="demo-for" style="font-size:12px; color:#6b7280;">Who it's for: owners or bookkeepers who need a clean receivables view.</p>
+            <p class="demo-friction" style="font-size:12px; color:#6b7280;">Works with your existing Google Sheets. No ERP change required.</p>
             <div class="demo-actions">
               <a
                 class="demo-btn"
@@ -750,7 +772,7 @@
                 rel="noopener noreferrer"
                 style="display: block; cursor: pointer;"
               >
-                <img src="ops-dashboard.png" alt="Operations performance dashboard demo" />
+                <img src="ops-dashboard.png" alt="Operations performance dashboard demo" width="600" height="360" />
               </a>
             </div>
             <p class="demo-text">
@@ -758,6 +780,8 @@
               time. Built to replace static reports and make it easier for leaders to see which locations
               are improving, slipping, or need support at a glance.
             </p>
+            <p class="demo-for" style="font-size:12px; color:#6b7280;">Who it's for: operations leaders who want faster weekly reviews across regions.</p>
+            <p class="demo-friction" style="font-size:12px; color:#6b7280;">Minimal disruption: layers over your current Sheets and reporting.</p>
             <div class="demo-actions">
               <a
                 class="demo-btn"
@@ -780,13 +804,14 @@
                 rel="noopener noreferrer"
                 style="display: block; cursor: pointer;"
               >
-                <img src="inventory-dashboard.png" alt="Inventory and fulfillment dashboard demo" />
+                <img src="inventory-dashboard.png" alt="Inventory and fulfillment dashboard demo" width="600" height="360" />
               </a>
             </div>
             <p class="demo-text">
               An inventory management-style dashboard showing outstanding orders, delivery windows, and risk flags.
               Helps operations teams spot issues early, reduce stockouts, and keep an eye on what's coming in without digging through multiple spreadsheets.
             </p>
+            <p class="demo-for" style="font-size:12px; color:#6b7280;">Who it's for: inventory/logistics teams that need proactive risk flags and windows.</p>
             <div class="demo-actions">
               <a
                 class="demo-btn"
@@ -816,9 +841,10 @@
             <div class="process-step-label">Step 1</div>
             <strong>Quick call</strong>
             <div>
-              You show me your current spreadsheets and talk through what’s painful or confusing
+              You show me your current spreadsheets and talk through what's painful or confusing
               about them today. Plain English is perfect, no technical prep needed.
             </div>
+            <div style="font-size:12px; color:#6b7280; margin-top:6px;">No technical prep. Show me the messy sheet as‑is.</div>
           </div>
           <div class="process-step">
             <div class="process-step-label">Step 2</div>
@@ -918,12 +944,13 @@
 
         <div class="about-card" style="margin-bottom: 14px;">
           <p>
-            I’ve spent years working in operations, process design, and continuous improvement.
+            I've spent years working in operations, process design, and continuous improvement.
             A common pattern across roles has been cleaning up messy spreadsheets and building
-            tools that help teams see what’s happening and act faster.
+            tools that help teams see what's happening and act faster.
           </p>
+          <p style="margin-top:8px;">Ops background across fast‑moving teams; specialized in stabilizing messy spreadsheet systems and shipping decision‑ready views in 14 days.</p>
           <p>
-            If you’re a business owner or operations leader who knows you’re under-using
+            If you're a business owner or operations leader who knows you're under-using
             the data you already have, I can help you turn it into a clear, reliable view you
             can actually run the business from, without adding another complex system to your stack.
           </p>
